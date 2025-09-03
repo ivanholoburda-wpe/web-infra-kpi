@@ -49,6 +49,6 @@ func (s *checkerService) CheckSite(ctx context.Context, site *models.Site) error
 		return err
 	}
 
-	log.Printf("Successfully processed site %s, new status: %s", site.Url, site.HttpStatus)
+	log.Printf("Successfully processed site %s, new status: %d", site.Url, site.HttpStatus)
 	return nil
 }
