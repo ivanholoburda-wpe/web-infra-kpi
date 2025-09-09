@@ -90,6 +90,7 @@ func (h *SiteHandler) Delete(c *gin.Context) {
 func mapModelToResponse(site *models.Site) dto.SiteResponse {
 	return dto.SiteResponse{
 		ID:           site.ID,
+		Name:         site.Name,
 		URL:          site.Url,
 		HttpStatus:   site.HttpStatus,
 		ResponseTime: site.ResponseTime,

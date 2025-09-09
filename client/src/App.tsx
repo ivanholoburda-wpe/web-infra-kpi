@@ -3,6 +3,7 @@ import './App.scss'
 import {createOrUpdateSite, deleteSite, fetchSites} from "./services/api.ts";
 import SiteForm from "./components/SiteForm.tsx";
 import SiteList from "./components/SiteList.tsx";
+import type Site from "./interfaces/site.interface.ts";
 
 function App() {
     const [sites, setSites] = useState<any[]>([]);
@@ -12,7 +13,7 @@ function App() {
         fetchSites().then(setSites);
     }, []);
 
-    const handleCreateOrUpdate = async (site: any) => {
+    const handleCreateOrUpdate = async (site: Partial<Site>) => {
         await createOrUpdateSite(site);
         fetchSites().then(setSites);
         setSelectedSite(null);

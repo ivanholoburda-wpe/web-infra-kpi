@@ -9,6 +9,7 @@ type CreateSiteRequest struct {
 
 type SiteResponse struct {
 	ID           uint      `json:"id"`
+	Name         string    `json:"name"`
 	URL          string    `json:"url"`
 	HttpStatus   int       `json:"http_status"`
 	ResponseTime int       `json:"response_time"`
