@@ -1,0 +1,106 @@
+@import "styles/variables";
+
+.container {
+  max-width: 1200px;
+  margin: $spacing auto;
+  padding: $spacing;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: $spacing;
+  color: $primary-color;
+}
+
+.site-form {
+  background-color: lighten($background-color, 5%);
+  padding: $spacing;
+  border-radius: $border-radius;
+  margin-bottom: $spacing;
+
+  .input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: $spacing / 2;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+  }
+
+  .error {
+    color: $secondary-color;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.site-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing;
+
+  .site-item {
+    background-color: white;
+    padding: $spacing;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .site-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: $spacing / 2;
+    }
+
+    p {
+      margin-bottom: $spacing / 2;
+    }
+  }
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: $spacing / 2;
+
+  &--add {
+    background-color: #10B981;
+    color: white;
+    &:hover {
+      background-color: darken(#10B981, 10%);
+    }
+  }
+
+  &--update {
+    background-color: #3B82F6;
+    color: white;
+    &:hover {
+      background-color: darken(#3B82F6, 10%);
+    }
+  }
+
+  &--edit {
+    background-color: #F59E0B;
+    color: white;
+    &:hover {
+      background-color: darken(#F59E0B, 10%);
+    }
+  }
+
+  &--delete {
+    background-color: #EF4444;
+    color: white;
+    &:hover {
+      background-color: darken(#EF4444, 10%);
+    }
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
