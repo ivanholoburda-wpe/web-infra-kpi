@@ -1,7 +1,7 @@
 export default interface Site {
-    ID: number;
-    Name: string;
-    Url: string;
-    HttpStatus: number;
-    ResponseTime: number;
+    id: number;
+    name: string;
+    url: string;
+    http_status: number;
+    response_time: number;
 }

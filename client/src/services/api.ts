@@ -1,4 +1,5 @@
 import axios from 'axios';
+import type Site from "../interfaces/site.interface.ts";
 
 const BASE_URL = 'http://localhost:8080/api/v1';
 
@@ -7,10 +8,11 @@ export const fetchSites = async () => {
     return response.data;
 };
 
-export const createOrUpdateSite = async (site: any) => {
+export const createOrUpdateSite = async (site: Partial<Site>) => {
     const method = site.id ? 'put' : 'post';
     const url = site.id ? `${BASE_URL}/sites/${site.id}` : `${BASE_URL}/sites`;
-    await axios({ method, url, data: site });
+    console.log(site);
+    await axios({method, url, data: site});
 };
 
 export const deleteSite = async (id: number) => {
